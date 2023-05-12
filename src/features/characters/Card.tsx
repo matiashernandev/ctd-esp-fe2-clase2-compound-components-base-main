@@ -1,18 +1,11 @@
 import Character from 'features/characters/characters.types';
-import CardPicture from './CardPicture';
-import CardContent from './CardContent';
-import CardActions from './CardActions';
+import { ReactNode } from 'react';
 
 interface ICardProps {
   iHateThisChars: Character;
+  children: ReactNode;
 }
 
-export default function Card({ iHateThisChars }: ICardProps) {
-  return (
-    <div className={'card'}>
-      <CardPicture cardImage={iHateThisChars.image} />
-      <CardContent name={iHateThisChars.name} />
-      <CardActions iHateThisChars={iHateThisChars} />
-    </div>
-  );
+export default function Card({ children }: ICardProps) {
+  return <div className={'card'}>{children}</div>;
 }

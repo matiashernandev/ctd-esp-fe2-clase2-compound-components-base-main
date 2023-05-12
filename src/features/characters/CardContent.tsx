@@ -1,11 +1,15 @@
+import CardActions from './CardActions';
+import Character from './characters.types';
+
 interface ICardContentProps {
-  name: string;
+  iHateThisChars: Character;
 }
 
-export default function CardContent({ name }: ICardContentProps) {
+export default function CardContent({ iHateThisChars }: ICardContentProps) {
   return (
     <div className={'card-body'}>
-      <span>{name}</span>
+      <span>{iHateThisChars.name}</span>
+      <CardActions iHateThisChars={iHateThisChars} />
     </div>
   );
 }
